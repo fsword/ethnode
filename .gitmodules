@@ -1,3 +1,0 @@
-[submodule "ethstats-client"]
-	path = ethstats-client
-	url = https://github.com/cubedro/eth-net-intelligence-api
