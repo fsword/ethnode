@@ -28,8 +28,7 @@ RUN cd .ethereum && \
 VOLUME /root/ethstats-client/logs
 VOLUME /var/lib/chaindata
 
-RUN npm install -g pm2 && \
-        curl -O https://gist.githubusercontent.com/fsword/035109f94bf7d6dc8b1c4dea797288ab/raw/d8b36a894c44741ead94f2a9414aadb57059b557/processes.json 
-COPY setup.sh .
+RUN npm install -g pm2
+COPY *.* /root/
 
-CMD bash setup.sh && pm2 start processes.json && pm2 logs --err --raw
+ENTRYPOINT bash setup.sh && pm2 start processes.json && /usr/bin/geth
