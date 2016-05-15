@@ -13,6 +13,6 @@ docker run fsword/ethnode
 docker run \
   -e instance=<your instance name> \
   -e contact_details=<your email>  \
-  -v <your data folder>:/var/lib/chaindata
+  -v <your data folder>:/var/lib/chaindata \
   fsword/ethnode
 ```
