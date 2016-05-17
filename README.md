@@ -7,7 +7,7 @@ build a docker image for ethfans' node
 docker run -d \
   -e instance=<your instance name> \
   -e contact_details=<your email>  \
-  -v <your data folder>:/root/.ethereum \
+  -v <your data folder>:/var/lib/chaindata \
   -p 30303:30303 \
   fsword/ethnode
 ```
