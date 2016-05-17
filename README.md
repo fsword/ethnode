@@ -3,16 +3,11 @@ build a docker image for ethfans' node
 
 # usage
 
-1. simple ( not 	recommend , just for building a demo )
-```
-docker run fsword/ethnode
-```
-2. production（ set options and mount data folder ）
-
-```
-docker run \
+```bash
+docker run -d \
   -e instance=<your instance name> \
   -e contact_details=<your email>  \
-  -v <your data folder>:/var/lib/chaindata \
+  -v <your data folder>:/root/.ethereum \
+  -p 30303:30303 \
   fsword/ethnode
 ```

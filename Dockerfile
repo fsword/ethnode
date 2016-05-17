@@ -29,4 +29,4 @@ VOLUME /var/lib/chaindata
 COPY static-nodes.json /root/.ethereum/
 COPY setup.sh processes.json /root/
 
-ENTRYPOINT bash setup.sh && pm2 start processes.json && exec /usr/bin/geth --rpc --fast --maxpeers 100
+ENTRYPOINT bash setup.sh && exec /usr/bin/geth --rpc --fast --maxpeers 100 && pm2 start processes.json
