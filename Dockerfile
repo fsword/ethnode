@@ -19,10 +19,12 @@ RUN git clone https://github.com/cubedro/eth-net-intelligence-api ethstats-clien
         mkdir logs && \
         npm install
 
-RUN mkdir .ethereum
+RUN mkdir .ethereum && \
+        mkdir /var/lib/chaindata && \
+        ln -s /var/lib/chaindata /root/.ethereum/chaindata
 
 VOLUME /root/ethstats-client/logs
-VOLUME /root/.ethereum
+VOLUME /var/lib/chaindata
 
 COPY static-nodes.json /root/.ethereum/
 COPY setup.sh processes.json /root/
