@@ -1,4 +1,4 @@
-FROM ethereum/client-go
+FROM ethereum/client-go:latest
 
 RUN sed -ie 's/archive\.ubuntu\.com/mirrors.ustc.edu.cn/' /etc/apt/sources.list
 RUN apt-get update && \
