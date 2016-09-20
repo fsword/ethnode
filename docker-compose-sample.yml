@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  ethereum:
+    build: ./ethereum-node/
+    volumes:
+      - /data/store/ethnode:/var/lib/chaindata
+    ports:
+      - 30303:30303
+  netstats:
+    environment:
+      instance: 
+      contact_details: 
+    build: ./netstats-node/
