@@ -5,6 +5,6 @@ build a docker images for ethfans' node
 
 ```bash
 # cp docker-compose-sample.yml docker-compose.yml
-# <change instance and contact_details environments>
+# <set values of `instance` and `contact_details` environments>
 # docker-compose up -d
 ```
