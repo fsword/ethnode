@@ -12,3 +12,7 @@ services:
       instance: 
       contact_details: 
     build: ./netstats-node/
+    depends_on:
+      - ethereum
+    network_mode: "service:ethereum"
+
