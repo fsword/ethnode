@@ -4,7 +4,7 @@ services:
   ethereum:
     build: ./ethereum-node/
     volumes:
-      - /data/store/ethnode:/var/lib/chaindata
+      - /data/store/parity:/root/.parity
     ports:
       - 30303:30303
   netstats:
