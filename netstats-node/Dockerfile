@@ -1,12 +1,13 @@
 FROM mhart/alpine-node:6
 
 RUN sed -i -e 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
-RUN apk add --update git
-
-RUN git clone https://github.com/cubedro/eth-net-intelligence-api ethstats-client && \
+RUN apk add --update git && \
+        git clone https://github.com/cubedro/eth-net-intelligence-api ethstats-client && \
         cd ethstats-client && \
         mkdir logs && \
-        npm install
+        npm install && \
+        apk del git ca-certificates libssh2 libcurl expat pcre && \
+        rm -rf /var/cache/apk/*
 
 ENV LC_ALL zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
