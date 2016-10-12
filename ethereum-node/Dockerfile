@@ -8,6 +8,8 @@ RUN apt-get update && \
     ( wget http://upyun-assets.ethfans.org/parity/1-3-6/parity_1.3.6-0_amd64.deb \
       || wget https://github.com/ethcore/parity/releases/download/v1.3.6/parity_1.3.6-0_amd64.deb ) && \
     dpkg -i parity*.deb && \
+    rm parity*.deb && \
+    apt-get autoremove wget -y && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 VOLUME /root/.parity
